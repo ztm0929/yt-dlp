@@ -298,29 +298,26 @@ If you fork the project on GitHub, you can run your fork's [build workflow](.git
 
 <!-- Auto generated -->
 ## General Options:
-    -h, --help                      Print this help text and exit
-    --version                       Print program version and exit
-    -U, --update                    Update this program to the latest version
-    --no-update                     Do not check for updates (default)
-    --update-to [CHANNEL]@[TAG]     Upgrade/downgrade to a specific version.
+    -h, --help                      打印此帮助文本并退出
+    --version                       打印程序当前版本并退出
+    -U, --update                    更新此程序到最新版本
+    --no-update                     不检查版本更新（默认）
+    --update-to [CHANNEL]@[TAG]     升级/降级到一个指定版本。
                                     CHANNEL can be a repository as well. CHANNEL
                                     and TAG default to "stable" and "latest"
                                     respectively if omitted; See "UPDATE" for
                                     details. Supported channels: stable,
                                     nightly, master
-    -i, --ignore-errors             Ignore download and postprocessing errors.
-                                    The download will be considered successful
-                                    even if the postprocessing fails
+    -i, --ignore-errors             忽略下载和后处理错误。即使后处理失败，下载也将被视为成功
     --no-abort-on-error             Continue with next video on download errors;
                                     e.g. to skip unavailable videos in a
                                     playlist (default)
     --abort-on-error                Abort downloading of further videos if an
                                     error occurs (Alias: --no-ignore-errors)
-    --dump-user-agent               Display the current user-agent and exit
-    --list-extractors               List all supported extractors and exit
-    --extractor-descriptions        Output descriptions of all supported
-                                    extractors and exit
-    --use-extractors NAMES          Extractor names to use separated by commas.
+    --dump-user-agent               显示当前的用户代理（user-agent）并退出
+    --list-extractors               列出所有支持的提取器并退出
+    --extractor-descriptions        输出所有支持的提取器描述并退出
+    --use-extractors NAMES          使用逗号分隔提取器名称。
                                     You can also use regexes, "all", "default"
                                     and "end" (end URL matching); e.g. --ies
                                     "holodex.*,end,youtube". Prefix the name
@@ -405,8 +402,8 @@ If you fork the project on GitHub, you can run your fork's [build workflow](.git
                                     chrome, chrome-110, chrome:windows-10. Pass
                                     --impersonate="" to impersonate any client.
     --list-impersonate-targets      List available clients to impersonate.
-    -4, --force-ipv4                Make all connections via IPv4
-    -6, --force-ipv6                Make all connections via IPv6
+    -4, --force-ipv4                通过 IPV4 进行所有连接
+    -6, --force-ipv6                通过 IPV6 进行所有连接
     --enable-file-urls              Enable file:// URLs. This is disabled by
                                     default for security reasons.
 
