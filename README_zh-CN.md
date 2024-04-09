@@ -89,7 +89,7 @@ yt-dlp 是一个功能丰富的命令行音频/视频下载器，支持[数千�
 [![All versions](https://img.shields.io/badge/-All_Versions-lightgrey.svg?style=for-the-badge)](https://github.com/yt-dlp/yt-dlp/releases)
 <!-- MANPAGE: END EXCLUDED SECTION -->
 
-你可以使用[二进制文件](#release-files)、[pip](https://pypi.org/project/yt-dlp) 或第三方包管理器来安装 yt-dlp 。详细安装指南请参见 [wiki 页面](https://github.com/yt-dlp/yt-dlp/wiki/Installation)。
+你可以使用[二进制文件](#发布文件)、[pip](https://pypi.org/project/yt-dlp) 或第三方包管理器来安装 yt-dlp 。详细安装指南请参见 [wiki 页面](https://github.com/yt-dlp/yt-dlp/wiki/Installation)。
 
 
 <!-- MANPAGE: BEGIN EXCLUDED SECTION -->
@@ -140,7 +140,7 @@ gpg --verify SHA2-512SUMS.sig SHA2-512SUMS
 
 
 ## UPDATE
-You can use `yt-dlp -U` to update if you are using the [release binaries](#release-files)
+You can use `yt-dlp -U` to update if you are using the [release binaries](#发布文件)
 
 If you [installed with pip](https://github.com/yt-dlp/yt-dlp/wiki/Installation#with-pip), simply re-run the same command that was used to install the program
 
@@ -159,7 +159,7 @@ When using `--update`/`-U`, a release binary will only update to its current cha
 
 You may also use `--update-to <repository>` (`<owner>/<repository>`) to update to a channel on a completely different repository. Be careful with what repository you are updating to though, there is no verification done for binaries from different repositories.
 
-Example usage:
+示例用法：
 
 * `yt-dlp --update-to master` switch to the `master` channel and update to its latest release
 * `yt-dlp --update-to stable@2023.07.06` upgrade/downgrade to release to `stable` channel tag `2023.07.06`
@@ -208,7 +208,7 @@ The following provide support for impersonating browser requests. This may be re
   * Currently only included in `yt-dlp.exe` and `yt-dlp_macos` builds
 
 
-### Metadata
+### 元数据
 
 * [**mutagen**](https://github.com/quodlibet/mutagen)\* - For `--embed-thumbnail` in certain formats. Licensed under [GPLv2+](https://github.com/quodlibet/mutagen/blob/master/COPYING)
 * [**AtomicParsley**](https://github.com/wez/atomicparsley) - For `--embed-thumbnail` in `mp4`/`m4a` files when `mutagen`/`ffmpeg` cannot. Licensed under [GPLv2+](https://github.com/wez/atomicparsley/blob/master/COPYING)
@@ -275,7 +275,7 @@ py devscripts/make_lazy_extractors.py
 py -m bundle.py2exe
 ```
 
-### Related scripts
+### 相关脚本
 
 * **`devscripts/install_deps.py`** - Install dependencies for yt-dlp.
 * **`devscripts/update-version.py`** - Update the version number based on current date.
@@ -285,19 +285,19 @@ py -m bundle.py2exe
 
 Note: See their `--help` for more info.
 
-### Forking the project
+### 复刻本项目
 If you fork the project on GitHub, you can run your fork's [build workflow](.github/workflows/build.yml) to automatically build the selected version(s) as artifacts. Alternatively, you can run the [release workflow](.github/workflows/release.yml) or enable the [nightly workflow](.github/workflows/release-nightly.yml) to create full (pre-)releases.
 
-# USAGE AND OPTIONS
+# 用法和选项
 
 <!-- MANPAGE: BEGIN EXCLUDED SECTION -->
     yt-dlp [OPTIONS] [--] URL [URL...]
 
-`Ctrl+F` is your friend :D
+`Ctrl+F` 善用搜索功能 :D
 <!-- MANPAGE: END EXCLUDED SECTION -->
 
 <!-- Auto generated -->
-## General Options:
+## 常规选项：
     -h, --help                      打印此帮助文本并退出
     --version                       打印程序当前版本并退出
     -U, --update                    更新此程序到最新版本
@@ -390,7 +390,7 @@ If you fork the project on GitHub, you can run your fork's [build workflow](.git
                                     alias may be triggered a maximum of 100
                                     times. This option can be used multiple times
 
-## Network Options:
+## 网络选项：
     --proxy URL                     Use the specified HTTP/HTTPS/SOCKS proxy. To
                                     enable SOCKS proxy, specify a proper scheme,
                                     e.g. socks5://user:pass@127.0.0.1:1080/.
@@ -407,7 +407,7 @@ If you fork the project on GitHub, you can run your fork's [build workflow](.git
     --enable-file-urls              Enable file:// URLs. This is disabled by
                                     default for security reasons.
 
-## Geo-restriction:
+## 地理限制：
     --geo-verification-proxy URL    Use this proxy to verify the IP address for
                                     some geo-restricted sites. The default proxy
                                     specified by --proxy (or none, if the option
@@ -419,7 +419,7 @@ If you fork the project on GitHub, you can run your fork's [build workflow](.git
                                     "never", an IP block in CIDR notation, or a
                                     two-letter ISO 3166-2 country code
 
-## Video Selection:
+## 视频选择：
     -I, --playlist-items ITEM_SPEC  Comma separated playlist_index of the items
                                     to download. You can specify a range using
                                     "[START]:[STOP][:STEP]". For backward
@@ -492,7 +492,7 @@ If you fork the project on GitHub, you can run your fork's [build workflow](.git
     --skip-playlist-after-errors N  Number of allowed failures until the rest of
                                     the playlist is skipped
 
-## Download Options:
+## 下载选项：
     -N, --concurrent-fragments N    Number of fragments of a dash/hlsnative
                                     video that should be downloaded concurrently
                                     (default is 1)
@@ -586,7 +586,7 @@ If you fork the project on GitHub, you can run your fork's [build workflow](.git
                                     arguments to different downloaders (Alias:
                                     --external-downloader-args)
 
-## Filesystem Options:
+## 文件系统选项：
     -a, --batch-file FILE           File containing URLs to download ("-" for
                                     stdin), one URL per line. Lines starting
                                     with "#", ";" or "]" are considered as
@@ -683,7 +683,7 @@ If you fork the project on GitHub, you can run your fork's [build workflow](.git
     --no-cache-dir                  Disable filesystem caching
     --rm-cache-dir                  Delete all filesystem cache files
 
-## Thumbnail Options:
+## 缩略图选项：
     --write-thumbnail               Write thumbnail image to disk
     --no-write-thumbnail            Do not write thumbnail image to disk (default)
     --write-all-thumbnails          Write all thumbnail image formats to disk
@@ -791,7 +791,7 @@ If you fork the project on GitHub, you can run your fork's [build workflow](.git
     --sleep-subtitles SECONDS       Number of seconds to sleep before each
                                     subtitle download
 
-## Video Format Options:
+## 视频格式选项：
     -f, --format FORMAT             Video format code, see "FORMAT SELECTION"
                                     for more details
     -S, --format-sort SORTORDER     Sort the formats by the fields given, see
@@ -828,7 +828,7 @@ If you fork the project on GitHub, you can run your fork's [build workflow](.git
                                     Ignored if no merge is required. (currently
                                     supported: avi, flv, mkv, mov, mp4, webm)
 
-## Subtitle Options:
+## 字幕选项：
     --write-subs                    Write subtitle file
     --no-write-subs                 Do not write subtitle file (default)
     --write-auto-subs               Write automatically generated subtitle file
@@ -847,7 +847,7 @@ If you fork the project on GitHub, you can run your fork's [build workflow](.git
                                     all,-live_chat. Use --list-subs for a list
                                     of available language tags
 
-## Authentication Options:
+## 认证选项：
     -u, --username USERNAME         Login with this account ID
     -p, --password PASSWORD         Account password. If this option is left
                                     out, yt-dlp will ask interactively
@@ -877,7 +877,7 @@ If you fork the project on GitHub, you can run your fork's [build workflow](.git
                                     if encrypted. If not provided, and the key
                                     is encrypted, yt-dlp will ask interactively
 
-## Post-Processing Options:
+## 后处理选项：
     -x, --extract-audio             Convert video files to audio-only files
                                     (requires ffmpeg and ffprobe)
     --audio-format FORMAT           Format to convert the audio to when -x is
@@ -1074,7 +1074,7 @@ Make chapter entries for, or remove various segments (sponsor,
     --sponsorblock-api URL          SponsorBlock API location, defaults to
                                     https://sponsor.ajay.app
 
-## Extractor Options:
+## 提取器选项：
     --extractor-retries RETRIES     Number of retries for known extractor errors
                                     (default is 3), or "infinite"
     --allow-dynamic-mpd             Process dynamic DASH manifests (default)
@@ -1093,7 +1093,8 @@ Make chapter entries for, or remove various segments (sponsor,
 
 # CONFIGURATION
 
-You can configure yt-dlp by placing any supported command line option to a configuration file. The configuration is loaded from the following locations:
+你可以通过配置文件的方式替代任何受支持的命令行选项，用以配置 yt-dlp 。
+The configuration is loaded from the following locations:
 
 1. **Main Configuration**:
     * The file given to `--config-location`
