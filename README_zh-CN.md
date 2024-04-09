@@ -22,15 +22,14 @@ yt-dlp 是一个功能丰富的命令行音频/视频下载器，支持[数千�
 <!-- MANPAGE: MOVE "USAGE AND OPTIONS" SECTION HERE -->
 
 <!-- MANPAGE: BEGIN EXCLUDED SECTION -->
-* [INSTALLATION](#installation)
 * [安装](#安装)
-    * [Detailed instructions](https://github.com/yt-dlp/yt-dlp/wiki/Installation)
+    * [详细安装说明](https://github.com/yt-dlp/yt-dlp/wiki/Installation)
     * [发布文件](#发布文件)
-    * [Update](#update)
-    * [Dependencies](#dependencies)
+    * [更新](#更新)
+    * [依赖](#dependencies)
     * [Compile](#compile)
-* [USAGE AND OPTIONS](#usage-and-options)
-    * [General Options](#general-options)
+* [用法和选项](#用法和选项)
+    * [常规选项](#常规选项)
     * [Network Options](#network-options)
     * [Geo-restriction](#geo-restriction)
     * [Video Selection](#video-selection)
