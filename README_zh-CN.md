@@ -30,47 +30,46 @@ yt-dlp 是一个功能丰富的命令行音频/视频下载器，支持[数千�
     * [Compile](#compile)
 * [用法和选项](#用法和选项)
     * [常规选项](#常规选项)
-    * [Network Options](#network-options)
-    * [Geo-restriction](#geo-restriction)
-    * [Video Selection](#video-selection)
-    * [Download Options](#download-options)
+    * [网络选项](#网络选项)
+    * [地理限制](#geo-restriction)
+    * [视频选择](#video-selection)
     * [下载选项](#下载选项)
-    * [Filesystem Options](#filesystem-options)
-    * [Thumbnail Options](#thumbnail-options)
+    * [文件系统选项](#filesystem-options)
+    * [缩略图选项](#thumbnail-options)
     * [Internet Shortcut Options](#internet-shortcut-options)
     * [Verbosity and Simulation Options](#verbosity-and-simulation-options)
     * [Workarounds](#workarounds)
-    * [Video Format Options](#video-format-options)
-    * [Subtitle Options](#subtitle-options)
-    * [Authentication Options](#authentication-options)
-    * [Post-processing Options](#post-processing-options)
+    * [视频格式选项](#video-format-options)
+    * [字幕选项](#subtitle-options)
+    * [认证选项](#authentication-options)
+    * [后处理选项](#post-processing-options)
     * [SponsorBlock Options](#sponsorblock-options)
-    * [Extractor Options](#extractor-options)
-* [CONFIGURATION](#configuration)
+    * [提取器选项](#extractor-options)
+* [配置](#configuration)
     * [Configuration file encoding](#configuration-file-encoding)
     * [Authentication with netrc](#authentication-with-netrc)
     * [Notes about environment variables](#notes-about-environment-variables)
-* [OUTPUT TEMPLATE](#output-template)
-    * [Output template examples](#output-template-examples)
-* [FORMAT SELECTION](#format-selection)
-    * [Filtering Formats](#filtering-formats)
-    * [Sorting Formats](#sorting-formats)
-    * [Format Selection examples](#format-selection-examples)
-* [MODIFYING METADATA](#modifying-metadata)
-    * [Modifying metadata examples](#modifying-metadata-examples)
-* [EXTRACTOR ARGUMENTS](#extractor-arguments)
-* [PLUGINS](#plugins)
-    * [Installing Plugins](#installing-plugins)
-    * [Developing Plugins](#developing-plugins)
-* [EMBEDDING YT-DLP](#embedding-yt-dlp)
-    * [Embedding examples](#embedding-examples)
+* [输出模板](#output-template)
+    * [输出模板示例](#output-template-examples)
+* [格式选择](#format-selection)
+    * [筛选格式](#filtering-formats)
+    * [排序格式](#sorting-formats)
+    * [格式选择示例](#format-selection-examples)
+* [编辑元数据](#modifying-metadata)
+    * [编辑元数据示例](#modifying-metadata-examples)
+* [提取器参数](#extractor-arguments)
+* [插件](#plugins)
+    * [安装插件](#installing-plugins)
+    * [开发插件](#developing-plugins)
+* [嵌入 YT-DLP](#embedding-yt-dlp)
+    * [嵌入示例](#embedding-examples)
 * [CHANGES FROM YOUTUBE-DL](#changes-from-youtube-dl)
-    * [New features](#new-features)
+    * [新特性](#new-features)
     * [Differences in default behavior](#differences-in-default-behavior)
     * [Deprecated options](#deprecated-options)
-* [CONTRIBUTING](CONTRIBUTING.md#contributing-to-yt-dlp)
-    * [Opening an Issue](CONTRIBUTING.md#opening-an-issue)
-    * [Developer Instructions](CONTRIBUTING.md#developer-instructions)
+* [贡献指南](CONTRIBUTING.md#contributing-to-yt-dlp)
+    * [发起一个 issue](CONTRIBUTING.md#opening-an-issue)
+    * [开发者指引](CONTRIBUTING.md#developer-instructions)
 * [WIKI](https://github.com/yt-dlp/yt-dlp/wiki)
     * [FAQ](https://github.com/yt-dlp/yt-dlp/wiki/FAQ)
 <!-- MANPAGE: END EXCLUDED SECTION -->
@@ -85,7 +84,7 @@ yt-dlp 是一个功能丰富的命令行音频/视频下载器，支持[数千�
 [![PyPi](https://img.shields.io/badge/-PyPi-blue.svg?logo=pypi&labelColor=555555&style=for-the-badge)](https://pypi.org/project/yt-dlp)
 [![Source Tarball](https://img.shields.io/badge/-Source_tar-green.svg?style=for-the-badge)](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.tar.gz)
 [![Other variants](https://img.shields.io/badge/-Other-grey.svg?style=for-the-badge)](#release-files)
-[![All versions](https://img.shields.io/badge/-All_Versions-lightgrey.svg?style=for-the-badge)](https://github.com/yt-dlp/yt-dlp/releases)
+[![所有版本](https://img.shields.io/badge/-All_Versions-lightgrey.svg?style=for-the-badge)](https://github.com/yt-dlp/yt-dlp/releases)
 <!-- MANPAGE: END EXCLUDED SECTION -->
 
 你可以使用[二进制文件](#发布文件)、[pip](https://pypi.org/project/yt-dlp) 或第三方包管理器来安装 yt-dlp 。详细安装指南请参见 [wiki 页面](https://github.com/yt-dlp/yt-dlp/wiki/Installation)。
@@ -96,7 +95,7 @@ yt-dlp 是一个功能丰富的命令行音频/视频下载器，支持[数千�
 
 #### Recommended
 
-File|Description
+文件|描述说明
 :---|:---
 [yt-dlp](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp)|Platform-independent [zipimport](https://docs.python.org/3/library/zipimport.html) binary. Needs Python (recommended for **Linux/BSD**)
 [yt-dlp.exe](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe)|Windows (Win7 SP1+) standalone x64 binary (recommended for **Windows**)
@@ -104,7 +103,7 @@ File|Description
 
 #### Alternatives
 
-File|Description
+文件|描述说明
 :---|:---
 [yt-dlp_x86.exe](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_x86.exe)|Windows (Win7 SP1+) standalone x86 (32-bit) binary
 [yt-dlp_min.exe](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_min.exe)|Windows (Win7 SP1+) standalone x64 binary built with `py2exe`<br/> ([Not recommended](#standalone-py2exe-builds-windows))
@@ -118,7 +117,7 @@ File|Description
 
 #### Misc
 
-File|Description
+文件|描述说明
 :---|:---
 [yt-dlp.tar.gz](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.tar.gz)|Source tarball
 [SHA2-512SUMS](https://github.com/yt-dlp/yt-dlp/releases/latest/download/SHA2-512SUMS)|GNU-style SHA512 sums
@@ -138,7 +137,7 @@ gpg --verify SHA2-512SUMS.sig SHA2-512SUMS
 **Note**: The manpages, shell completion (autocomplete) files etc. are available inside the [source tarball](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.tar.gz)
 
 
-## UPDATE
+## 更新
 You can use `yt-dlp -U` to update if you are using the [release binaries](#发布文件)
 
 If you [installed with pip](https://github.com/yt-dlp/yt-dlp/wiki/Installation#with-pip), simply re-run the same command that was used to install the program
@@ -147,7 +146,7 @@ For other third-party package managers, see [the wiki](https://github.com/yt-dlp
 
 <a id="update-channels"></a>
 
-There are currently three release channels for binaries: `stable`, `nightly` and `master`.
+目前有三个二进制文件的发布渠道：`stable`、`nightly`和`master`。
 
 * `stable` is the default channel, and many of its changes have been tested by users of the `nightly` and `master` channels.
 * The `nightly` channel has releases scheduled to build every day around midnight UTC, for a snapshot of the project's new patches and changes. This is the **recommended channel for regular users** of yt-dlp. The `nightly` releases are available from [yt-dlp/yt-dlp-nightly-builds](https://github.com/yt-dlp/yt-dlp-nightly-builds/releases) or as development releases of the `yt-dlp` PyPI package (which can be installed with pip's `--pre` flag).
