@@ -1122,7 +1122,7 @@ The configuration is loaded from the following locations:
 
 E.g. with the following configuration file yt-dlp will always extract the audio, not copy the mtime, use a proxy and save all videos under `YouTube` directory in your home directory:
 ```
-# Lines starting with # are comments
+# 注释文本以 # 开头
 
 # Always extract audio
 -x
@@ -1130,14 +1130,14 @@ E.g. with the following configuration file yt-dlp will always extract the audio,
 # Do not copy the mtime
 --no-mtime
 
-# Use this proxy
+# 使用代理服务器
 --proxy 127.0.0.1:3128
 
 # Save all videos under YouTube directory in your home directory
 -o ~/YouTube/%(title)s.%(ext)s
 ```
 
-**Note**: Options in configuration file are just the same options aka switches used in regular command line calls; thus there **must be no whitespace** after `-` or `--`, e.g. `-o` or `--proxy` but not `- o` or `-- proxy`. They must also be quoted when necessary as-if it were a UNIX shell.
+**Note**: Options in configuration file are just the same options aka switches used in regular command line calls; thus there **不能使用多余的空格** 在 `-` 或 `--` 之后，举例来说，应该使用 `-o` 或 `--proxy` 而不是 `- o` 或 `-- proxy`。They must also be quoted when necessary as-if it were a UNIX shell.
 
 You can use `--ignore-config` if you want to disable all configuration files for a particular yt-dlp run. If `--ignore-config` is found inside any configuration file, no further configuration will be loaded. For example, having the option in the portable configuration file prevents loading of home, user, and system configurations. Additionally, (for backward compatibility) if `--ignore-config` is found inside the system configuration file, the user configuration is not loaded.
 
@@ -1175,14 +1175,14 @@ yt-dlp --netrc-cmd 'gpg --decrypt ~/.authinfo.gpg' https://www.youtube.com/watch
 ```
 
 
-### Notes about environment variables
+### 有关环境变量的注意事项
 * Environment variables are normally specified as `${VARIABLE}`/`$VARIABLE` on UNIX and `%VARIABLE%` on Windows; but is always shown as `${VARIABLE}` in this documentation
 * yt-dlp also allow using UNIX-style variables on Windows for path-like options; e.g. `--output`, `--config-location`
 * If unset, `${XDG_CONFIG_HOME}` defaults to `~/.config` and `${XDG_CACHE_HOME}` to `~/.cache`
 * On Windows, `~` points to `${HOME}` if present; or, `${USERPROFILE}` or `${HOMEDRIVE}${HOMEPATH}` otherwise
 * On Windows, `${USERPROFILE}` generally points to `C:\Users\<user name>` and `${APPDATA}` to `${USERPROFILE}\AppData\Roaming`
 
-# OUTPUT TEMPLATE
+# 输出模板
 
 The `-o` option is used to indicate a template for the output file names while `-P` option is used to specify the path each type of file should be saved to.
 
@@ -1221,12 +1221,12 @@ Additionally, you can set different output templates for the various metadata fi
 
 <a id="outtmpl-postprocess-note"></a>
 
-**Note**: Due to post-processing (i.e. merging etc.), the actual output filename might differ. Use `--print after_move:filepath` to get the name after all post-processing is complete.
+**注意**: Due to post-processing (i.e. merging etc.), the actual output filename might differ. Use `--print after_move:filepath` to get the name after all post-processing is complete.
 
 The available fields are:
 
  - `id` (string): Video identifier
- - `title` (string): Video title
+ - `title` (string): 视频标题
  - `fulltitle` (string): Video title ignoring live timestamp and generic title
  - `ext` (string): Video filename extension
  - `alt_title` (string): A secondary title of the video
@@ -1236,7 +1236,7 @@ The available fields are:
  - `uploader_id` (string): Nickname or id of the video uploader
  - `uploader_url` (string): URL to the video uploader's profile
  - `license` (string): License name the video is licensed under
- - `creators` (list): The creators of the video
+ - `creators` (list): 视频创作者
  - `creator` (string): The creators of the video; comma-separated
  - `timestamp` (numeric): UNIX timestamp of the moment the video became available
  - `upload_date` (string): Video upload date in UTC (YYYYMMDD)
@@ -1247,16 +1247,16 @@ The available fields are:
  - `modified_date` (string): The date (YYYYMMDD) when the video was last modified in UTC
  - `channel` (string): Full name of the channel the video is uploaded on
  - `channel_id` (string): Id of the channel
- - `channel_url` (string): URL of the channel
- - `channel_follower_count` (numeric): Number of followers of the channel
- - `channel_is_verified` (boolean): Whether the channel is verified on the platform
+ - `channel_url` (string): 频道 URL
+ - `channel_follower_count` (numeric): 频道的关注用户数量
+ - `channel_is_verified` (boolean): 频道是否通过平台认证
  - `location` (string): Physical location where the video was filmed
- - `duration` (numeric): Length of the video in seconds
+ - `duration` (numeric): 视频时长（以秒为单位）
  - `duration_string` (string): Length of the video (HH:mm:ss)
  - `view_count` (numeric): How many users have watched the video on the platform
  - `concurrent_view_count` (numeric): How many users are currently watching the video on the platform.
- - `like_count` (numeric): Number of positive ratings of the video
- - `dislike_count` (numeric): Number of negative ratings of the video
+ - `like_count` (numeric): 视频的正面评分数量
+ - `dislike_count` (numeric): 视频的负面评分数量
  - `repost_count` (numeric): Number of reposts of the video
  - `average_rating` (numeric): Average rating give by users, the scale used depends on the webpage
  - `comment_count` (numeric): Number of comments on the video (For some extractors, comments are only downloaded at the end, and so this field cannot be used)
@@ -1359,9 +1359,9 @@ Available only in `--sponsorblock-chapter-title`:
 
 Each aforementioned sequence when referenced in an output template will be replaced by the actual value corresponding to the sequence name. E.g. for `-o %(title)s-%(id)s.%(ext)s` and an mp4 video with title `yt-dlp test video` and id `BaW_jenozKc`, this will result in a `yt-dlp test video-BaW_jenozKc.mp4` file created in the current directory.
 
-**Note**: Some of the sequences are not guaranteed to be present since they depend on the metadata obtained by a particular extractor. Such sequences will be replaced with placeholder value provided with `--output-na-placeholder` (`NA` by default).
+**注意**: Some of the sequences are not guaranteed to be present since they depend on the metadata obtained by a particular extractor. Such sequences will be replaced with placeholder value provided with `--output-na-placeholder` (`NA` by default).
 
-**Tip**: Look at the `-j` output to identify which fields are available for the particular URL
+**小提示**: Look at the `-j` output to identify which fields are available for the particular URL
 
 For numeric sequences you can use [numeric related formatting](https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting); e.g. `%(view_count)05d` will result in a string with view count padded with zeros up to 5 characters, like in `00042`.
 
@@ -1373,7 +1373,7 @@ The current default template is `%(title)s [%(id)s].%(ext)s`.
 
 In some cases, you don't want special characters such as 中, spaces, or &, such as when transferring the downloaded filename to a Windows system or the filename through an 8bit-unsafe channel. In these cases, add the `--restrict-filenames` flag to get a shorter title.
 
-#### Output template examples
+#### 输出模板示例
 
 ```bash
 $ yt-dlp --print filename -o "test video.%(ext)s" BaW_jenozKc
@@ -1414,9 +1414,9 @@ $ yt-dlp -P "C:/MyVideos" -o "%(uploader)s/%(title)s.%(ext)s" -o "subtitle:%(upl
 $ yt-dlp -o - BaW_jenozKc
 ```
 
-# FORMAT SELECTION
+# 格式选择
 
-By default, yt-dlp tries to download the best available quality if you **don't** pass any options.
+默认情况下，如果你**没有**输入任何选项，yt-dlp 会尝试下载最佳质量。
 This is generally equivalent to using `-f bestvideo*+bestaudio/best`. However, if multiple audiostreams is enabled (`--audio-multistreams`), the default format changes to `-f bestvideo+bestaudio/best`. Similarly, if ffmpeg is unavailable, or if you use yt-dlp to stream to `stdout` (`-o -`), the default becomes `-f best/bestvideo+bestaudio`.
 
 **Deprecation warning**: Latest versions of yt-dlp can stream multiple formats to the stdout simultaneously using ffmpeg. So, in future versions, the default for this will be set to `-f bv*+ba/b` similar to normal downloads. If you want to preserve the `-f b/bv+ba` setting, it is recommended to explicitly specify it in the configuration options.
@@ -1464,7 +1464,7 @@ You can merge the video and audio of multiple formats into a single file using `
 
 Unless `--video-multistreams` is used, all formats with a video stream except the first one are ignored. Similarly, unless `--audio-multistreams` is used, all formats with an audio stream except the first one are ignored. E.g. `-f bestvideo+best+bestaudio --video-multistreams --audio-multistreams` will download and merge all 3 given formats. The resulting file will have 2 video streams and 2 audio streams. But `-f bestvideo+best+bestaudio --no-video-multistreams` will download and merge only `bestvideo` and `bestaudio`. `best` is ignored since another format containing a video stream (`bestvideo`) has already been selected. The order of the formats is therefore important. `-f best+bestaudio --no-audio-multistreams` will download only `best` while `-f bestaudio+best --no-audio-multistreams` will ignore `best` and download only `bestaudio`.
 
-## Filtering Formats
+## 格式过滤
 
 You can also filter the video formats by putting a condition in brackets, as in `-f "best[height=720]"` (or `-f "[filesize>10M]"` since filters without a selector are interpreted as `best`).
 
@@ -1479,24 +1479,24 @@ The following numeric meta fields can be used with comparisons `<`, `<=`, `>`, `
  - `abr`: Average audio bitrate in [kbps](## "1000 bits/sec")
  - `vbr`: Average video bitrate in [kbps](## "1000 bits/sec")
  - `asr`: Audio sampling rate in Hertz
- - `fps`: Frame rate
+ - `fps`: 帧速率
  - `audio_channels`: The number of audio channels
  - `stretched_ratio`: `width:height` of the video's pixels, if not square
 
 Also filtering work for comparisons `=` (equals), `^=` (starts with), `$=` (ends with), `*=` (contains), `~=` (matches regex) and following string meta fields:
 
- - `url`: Video URL
- - `ext`: File extension
+ - `url`: 视频 URL
+ - `ext`: 文件扩展名
  - `acodec`: Name of the audio codec in use
  - `vcodec`: Name of the video codec in use
  - `container`: Name of the container format
  - `protocol`: The protocol that will be used for the actual download, lower-case (`http`, `https`, `rtsp`, `rtmp`, `rtmpe`, `mms`, `f4m`, `ism`, `http_dash_segments`, `m3u8`, or `m3u8_native`)
  - `language`: Language code
- - `dynamic_range`: The dynamic range of the video
- - `format_id`: A short description of the format
- - `format`: A human-readable description of the format
- - `format_note`: Additional info about the format
- - `resolution`: Textual description of width and height
+ - `dynamic_range`: 视频的动态范围
+ - `format_id`: 一份较短的格式描述
+ - `format`: 一份人类可读的格式描述
+ - `format_note`: 关于格式的补充信息
+ - `resolution`: 宽度和高度的文字版说明
 
 Any string comparison may be prefixed with negation `!` in order to produce an opposite comparison, e.g. `!*=` (does not contain). The comparand of a string comparison needs to be quoted with either double or single quotes if it contains spaces or special characters other than `._-`.
 
@@ -1506,7 +1506,7 @@ Formats for which the value is not known are excluded unless you put a question 
 
 Format selectors can also be grouped using parentheses; e.g. `-f "(mp4,webm)[height<480]"` will download the best pre-merged mp4 and webm formats with a height lower than 480.
 
-## Sorting Formats
+## 格式排序
 
 You can change the criteria for being considered the `best` by using `-S` (`--format-sort`). The general format for this is `--format-sort field1,field2...`.
 
