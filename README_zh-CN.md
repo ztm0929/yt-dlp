@@ -40,7 +40,7 @@ yt-dlp 是一个功能丰富的命令行音频/视频下载器，支持[数千�
     * [Verbosity and Simulation Options](#verbosity-and-simulation-options)
     * [Workarounds](#workarounds)
     * [视频格式选项](#video-format-options)
-    * [字幕选项](#subtitle-options)
+    * [字幕选项](#字幕选项)
     * [认证选项](#authentication-options)
     * [后处理选项](#post-processing-options)
     * [SponsorBlock Options](#sponsorblock-options)
@@ -159,12 +159,12 @@ You may also use `--update-to <repository>` (`<owner>/<repository>`) to update t
 
 示例用法：
 
-* `yt-dlp --update-to master` switch to the `master` channel and update to its latest release
-* `yt-dlp --update-to stable@2023.07.06` upgrade/downgrade to release to `stable` channel tag `2023.07.06`
-* `yt-dlp --update-to 2023.10.07` upgrade/downgrade to tag `2023.10.07` if it exists on the current channel
-* `yt-dlp --update-to example/yt-dlp@2023.09.24` upgrade/downgrade to the release from the `example/yt-dlp` repository, tag `2023.09.24`
+* `yt-dlp --update-to master` 切换到`master`频道并更新到最新版本
+* `yt-dlp --update-to stable@2023.07.06` 升级/降级到`stable`频道里标签为`2023.07.06`的版本
+* `yt-dlp --update-to 2023.10.07` 升级/降级到当前频道里标签为`2023.10.07`的版本
+* `yt-dlp --update-to example/yt-dlp@2023.09.24` 升级/降级到`example/yt-dlp`仓库中，标签为`2023.09.24`的版本
 
-**Important**: Any user experiencing an issue with the `stable` release should install or update to the `nightly` release before submitting a bug report:
+**重要**: 任何遇到`stable`问题的用户在提交错误报告前，应安装或更新到`nightly`以进行尝试：
 ```
 # To update to nightly from stable executable/binary:
 yt-dlp --update-to nightly
